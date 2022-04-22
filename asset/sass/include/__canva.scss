@@ -1,0 +1,15 @@
+.canva{
+    .file{
+        margin-top: $navbar-height;
+        width: 100vw;
+        height: 90vh;
+        opacity: 0;
+        position: absolute;
+    }
+    max-width: 500px;
+    margin: auto;
+    height: calc(100vh - 2px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

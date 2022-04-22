@@ -1,0 +1,30 @@
+.circle{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: $primaryD;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 84%;
+        height: 84%;
+        background: white;
+        border-radius: 50%;
+    }
+
+    .circle-content{
+        position: relative;
+        text-align: center;
+        font-weight: 800;
+        font-size: 3rem;
+        color: $secondaryD;
+    }
+}
+

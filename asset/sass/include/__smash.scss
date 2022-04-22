@@ -1,0 +1,137 @@
+@keyframes pulse {
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    50%{
+        opacity: .8;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(2.1);
+    }
+}
+
+@keyframes pulseProgress {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes pulseLogo {
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    100%{
+        opacity: .7;
+        transform: scale(1.3);
+    }
+}
+
+
+.smash{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+
+    .smash-pulse{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: lighten($color: rgba($primaryD, .6), $amount: 20);
+            border-radius: 50%;
+            animation: pulse 1.8s linear infinite .3s;
+            transition: animation ease-in-out 400ms;
+            z-index: 9;
+        }
+
+        .smash-progress{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 30;
+            position: relative;
+            
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $primaryD;
+                border-radius: 50%;
+                animation: pulseProgress 1.8s linear infinite .5s;
+                transition: animation ease-in-out 400ms;
+                z-index: 10;
+            }
+
+
+            .smash-logo{
+                z-index: 50;
+                width: 95%;
+                height: 95%;
+                background: $primaryD;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 150px;
+                height: 150px;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: lighten($color: rgba($secondaryD, .3), $amount: 25);
+                    border-radius: 50%;
+                    animation: pulseLogo 2s infinite linear .7s;
+                    transition: animation ease-in-out 400ms;
+                    z-index: 11;
+                }
+                .load{
+                    z-index: 500;
+                    position: absolute;
+                    top: 1;
+                    background: rgba($primaryD, .7);
+                    background: conic-gradient($primaryD 0%, $secondaryD 0%);
+                    border-radius: 100%;
+                    width: 152px;
+                    height: 152px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width: 150px;
+                        height: 150px;
+                        object-fit: cover;
+                        z-index: 100;
+                    }
+                }
+            }
+        }
+    }
+}
