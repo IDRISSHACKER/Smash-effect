@@ -1,0 +1,33 @@
+html{
+    font-family: "Poppins";
+}
+
+.circle{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgb(224, 70, 109);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 84%;
+    height: 84%;
+    background: white;
+    border-radius: 50%;
+}
+
+.circle .circle-content{
+    position: relative;
+    text-align: center;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #1d2424;
+}
